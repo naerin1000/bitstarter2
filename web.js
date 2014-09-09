@@ -6,8 +6,8 @@ var morgan = require("morgan")
 var app = express();
 app.use(morgan('dev'));
 
-app.use(function(request, response) {
-  response.send("Hello World2222!");
+app.use(function(request, response, next) {
+ response.send("Hello World2222!");
 });
 
 //var port = process.env.PORT || 5000;
