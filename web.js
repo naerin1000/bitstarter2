@@ -1,13 +1,14 @@
 var express = require('express');
-var morgan  = require('morgan');
+var morgan = require('morgan');
 
-//var app = express.createServer(express.logger());
+//var app = express.createServer();
 var app = express();
+
+app.use(morgan('dev'));
 
 app.get('/', function(request, response) {
   response.send("Hello World2222!");
 });
-app.use(morgan('dev'));
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
