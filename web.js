@@ -1,10 +1,10 @@
 var express = require('express');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 
 //var app = express.createServer();
 var app = express();
 
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 app.get('/', function(request, response) {
   response.send("Hello World2222!");
