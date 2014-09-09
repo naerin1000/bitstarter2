@@ -1,12 +1,9 @@
-var express = require('express');
+var http = require("http");
 
-var app = express.createServer(express.logger());
+http.createServer(function(request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World2");
+  response.end();
+}).listen(5000);
 
-app.get('/', function(request, response) {
-  response.send("Hello World2222!");
-});
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-}); 
