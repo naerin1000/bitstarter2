@@ -1,9 +1,15 @@
-var http = require("http");
+var express = require("express");
+var morgan = require("morgan")
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World2");
-  response.end();
-}).listen(5000);
+//var app = express.createServer(express.logger());
+var app = express();
+app.use(morgan('dev'));
 
+app.get('/', function(request, response) {
+  response.send("Hello World2222!");
+});
 
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+}); 
